@@ -33,8 +33,25 @@ for(let i=0; i<categorys.length; i++) {
             other.classList.remove("category__item_link--active");
         });
         categorys[i].classList.add("category__item_link--active");
+        window.location.href = categorys[i].href;
+
     });
 }
+
+// const categorys = document.querySelectorAll(".category__list .category__item_link");
+
+
+
+// categorys.forEach((category) => {
+//     category.addEventListener("click", function(e){
+//         e.preventDefault();
+//         categorys.forEach((other) => {
+//             other.classList.remove("category__item_link--active");
+//         });
+//         categorys.classList.add("category__item_link--active");
+//         window.location.href = category.href;
+//     });
+// }
 
 // active menu
 

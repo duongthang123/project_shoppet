@@ -83,7 +83,7 @@
 
                         <div class="content__form_box">
                             <h3 class="content__form_titile">Chọn ảnh</h3>
-                            <input class="content__form_input" placeholder="Nhập số lượng..." type="file" name="img" value="<?php echo isset($product['img']['name']) ? $product['img']['name'] : '' ?>">
+                            <input class="content__form_input" placeholder="Nhập số lượng..." type="file" name="img" value="<?php echo isset($product['img']) ? $target_file.$product['img'] : '' ?>">
                             <p id="errors">
                                 <?php echo isset($productErrors['img']['name']) ? $productErrors['img']['name'] : '';?>
                             </p>

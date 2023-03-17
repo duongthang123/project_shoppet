@@ -154,6 +154,6 @@
 
     </div>
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./public/assets/web/js/main.js"></script>
 </body>
 </html>

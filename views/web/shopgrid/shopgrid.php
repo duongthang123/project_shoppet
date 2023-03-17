@@ -11,18 +11,11 @@
                 <nav class="category">
                     <h3 class="category__heading">DANH MỤC</h3>
                     <ul class="category__list">
-                        <li class="category__item">
-                            <a href="" class="category__item_link category__item_link--active">Alaska</a>
-                        </li>
-                        <li class="category__item">
-                            <a href="" class="category__item_link">Golden Retriver</a>
-                        </li>
-                        <li class="category__item">
-                            <a href="" class="category__item_link">Corgi</a>
-                        </li>
-                        <li class="category__item">
-                            <a href="" class="category__item_link">Beagle</a>
-                        </li>
+                        <?php foreach($categories as $category) {?>
+                            <li class="category__item">
+                                <a href="index.php?controller=shopgrid&action=showProductByCategory&module=web&category_id=<?php echo $category['id'] ?>" class="category__item_link "><?php echo $category['name'] ?></a>
+                            </li>
+                        <?php }?>
                         
                     </ul>
                 </nav>
@@ -30,7 +23,9 @@
 
             <div class="col l-10 m-12 c-12">
                 <div class="row sm-gutter">
-                    <h3 class="shop__content_title">ALASKA</h3>
+                    <h3 class="shop__content_title">
+                        <?php echo isset($nameCategory[0]['name']) ? $nameCategory[0]['name'] : 'Thú Cưng' ?>
+                    </h3>
                 </div>
                 <div class="row sm-gutter">
                     <div class="shop__content_top">
@@ -43,162 +38,50 @@
                         </div>
 
                         <div class="shop__top_quantity">
-                            Số sản phẩm: 8
+                            Số sản phẩm: 
+                            <?php 
+                                $count = 0;
+                                foreach($products as $product) {
+                                    $count++;
+                                }
+                                echo $count;
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div class="row sm-gutter">
-                    <div class="col c-6 m-4 l-3">
-                        <div class="content__product">
-                            <div class="content__product-img">
-                                <img src="./assets/img/food.jpg" alt="" class="product__img">
-                                <div class="content__action">
-                                    <div class="content__action_click">
-                                        <i  class="content__action_like ti-heart"></i>
-                                        <i  class="content__action_search ti-search"></i>
-                                    </div>
-                                    <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
-                                </div>
-                            </div>
-                            
-    
-                            <div class="content__product_info">
-                                <div class="content__product_top">
-                                    <h3 class="content__product_id">ID: 12</h3>
-                                    <div class="content__product_star">
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
+                    <?php foreach($products as $product) {?>
+                        <div class="col c-6 m-4 l-3">
+                            <div class="content__product">
+                                <div class="content__product-img">
+                                    <img src="<?php echo $target_file.$product['img'] ?>" alt="" class="product__img">
+                                    <div class="content__action">
+                                        <div class="content__action_click">
+                                            <i  class="content__action_like ti-heart"></i>
+                                            <i  class="content__action_search ti-search"></i>
+                                        </div>
+                                        <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
                                     </div>
                                 </div>
-                                <a href="" class="content__product_name">POODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTE</a>
-                                <h3 class="content__product_price"><span>12.000.000 </span> VNĐ</h3>
+                                
+        
+                                <div class="content__product_info">
+                                    <div class="content__product_top">
+                                        <h3 class="content__product_id">ID: <?php echo $product['id'] ?></h3>
+                                        <div class="content__product_star">
+                                            <i class="content__product_star-icon ti-star"></i>
+                                            <i class="content__product_star-icon ti-star"></i>
+                                            <i class="content__product_star-icon ti-star"></i>
+                                            <i class="content__product_star-icon ti-star"></i>
+                                            <i class="content__product_star-icon ti-star"></i>
+                                        </div>
+                                    </div>
+                                    <a href="" class="content__product_name"><?php echo $product['name'] ?></a>
+                                    <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col c-6 m-4 l-3">
-                        <div class="content__product">
-                            <div class="content__product-img">
-                                <img src="./assets/img/food.jpg" alt="" class="product__img">
-                                <div class="content__action">
-                                    <div class="content__action_click">
-                                        <i  class="content__action_like ti-heart"></i>
-                                        <i  class="content__action_search ti-search"></i>
-                                    </div>
-                                    <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
-                                </div>
-                            </div>
-                            
-    
-                            <div class="content__product_info">
-                                <div class="content__product_top">
-                                    <h3 class="content__product_id">ID: 12</h3>
-                                    <div class="content__product_star">
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                    </div>
-                                </div>
-                                <a href="" class="content__product_name">POODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTE</a>
-                                <h3 class="content__product_price"><span>12.000.000 </span> VNĐ</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col c-6 m-4 l-3">
-                        <div class="content__product">
-                            <div class="content__product-img">
-                                <img src="./assets/img/food.jpg" alt="" class="product__img">
-                                <div class="content__action">
-                                    <div class="content__action_click">
-                                        <i  class="content__action_like ti-heart"></i>
-                                        <i  class="content__action_search ti-search"></i>
-                                    </div>
-                                    <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
-                                </div>
-                            </div>
-                            
-    
-                            <div class="content__product_info">
-                                <div class="content__product_top">
-                                    <h3 class="content__product_id">ID: 12</h3>
-                                    <div class="content__product_star">
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                    </div>
-                                </div>
-                                <a href="" class="content__product_name">POODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTE</a>
-                                <h3 class="content__product_price"><span>12.000.000 </span> VNĐ</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col c-6 m-4 l-3">
-                        <div class="content__product">
-                            <div class="content__product-img">
-                                <img src="./assets/img/food.jpg" alt="" class="product__img">
-                                <div class="content__action">
-                                    <div class="content__action_click">
-                                        <i  class="content__action_like ti-heart"></i>
-                                        <i  class="content__action_search ti-search"></i>
-                                    </div>
-                                    <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
-                                </div>
-                            </div>
-                            
-    
-                            <div class="content__product_info">
-                                <div class="content__product_top">
-                                    <h3 class="content__product_id">ID: 12</h3>
-                                    <div class="content__product_star">
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                    </div>
-                                </div>
-                                <a href="" class="content__product_name">POODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTE</a>
-                                <h3 class="content__product_price"><span>12.000.000 </span> VNĐ</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col c-6 m-4 l-3">
-                        <div class="content__product">
-                            <div class="content__product-img">
-                                <img src="./assets/img/food.jpg" alt="" class="product__img">
-                                <div class="content__action">
-                                    <div class="content__action_click">
-                                        <i  class="content__action_like ti-heart"></i>
-                                        <i  class="content__action_search ti-search"></i>
-                                    </div>
-                                    <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
-                                </div>
-                            </div>
-                            
-    
-                            <div class="content__product_info">
-                                <div class="content__product_top">
-                                    <h3 class="content__product_id">ID: 12</h3>
-                                    <div class="content__product_star">
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                        <i class="content__product_star-icon ti-star"></i>
-                                    </div>
-                                </div>
-                                <a href="" class="content__product_name">POODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTEPOODLE CÁI TRẮNG CUTE</a>
-                                <h3 class="content__product_price"><span>12.000.000 </span> VNĐ</h3>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <?php } ?>
                 </div>
             </div>
         </div>

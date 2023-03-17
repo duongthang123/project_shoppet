@@ -16,7 +16,15 @@ class Category extends Model
 
     }
 
-    
+    public function findCategoryById($idCategory)
+    {
+        $sql = "SELECT * FROM category WHERE id = $idCategory";
+
+        $result = $this->dbConnection->query($sql);
+
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function create($data)
     {

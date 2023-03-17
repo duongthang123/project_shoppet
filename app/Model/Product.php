@@ -15,6 +15,24 @@ class Product extends Model
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getProductForShop($limit = 8)
+    {
+        $sql = "SELECT * FROM product LIMIT $limit";
+
+        $result = $this->dbConnection->query($sql);
+
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getProductByCategory($category_id)
+    {
+        $sql = "SELECT * FROM product WHERE category_id = $category_id";
+
+        $result = $this->dbConnection->query($sql);
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function getNewProduct($limit = 4)
     {

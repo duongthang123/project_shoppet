@@ -63,6 +63,7 @@ class ProductController
         $id = $_GET['id'];
         $product = new Product();
         $product = $product->edit($id);
+        $target_file = "public/assets/admin/img/";
 
         $category = new Category();
         $categories = $category->all();
