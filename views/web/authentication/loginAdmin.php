@@ -3,10 +3,10 @@
 <div class="container container__shop">
     <div class="grid wide">
         <div class="row sm-gutter">
-            <h1 class="shop__title">Đăng Nhập</h1>
+            <h1 class="shop__title">Đăng Nhập ADMIN</h1>
         </div>
         
-        <form action="index.php?controller=authentication&action=login&module=web" class="check__out_form" method="POST">
+        <form action="index.php?controller=authentication&action=loginAdmin&module=web" class="check__out_form" method="POST">
             <div class="row sm-gutter">
                 <div class="col l-3 c-0 m-0"></div>
                 <div class="col l-6 m-12 c-12">
@@ -18,7 +18,7 @@
                             </div>
 
                             <div class="error">
-                                <p><?php echo isset($loginErrors['email']) ? $loginErrors['email'] : "" ?></p>
+                                <p><?php echo isset($loginAdErrors['email']) ? $loginAdErrors['email'] : "" ?></p>
                             </div>
                         </div>
                     </div>
@@ -31,10 +31,10 @@
                             </div>
 
                             <div class="error">
-                                <p><?php echo isset($loginErrors['password']) ? $loginErrors['password'] : "" ?></p>
+                                <p><?php echo isset($loginAdErrors['password']) ? $loginAdErrors['password'] : "" ?></p>
                             </div>
                             <div class="error">
-                                    <p><?php echo isset($loginErrors['error']) ? $loginErrors['error'] : "" ?></p>
+                                    <p><?php echo isset($loginAdErrors['error']) ? $loginAdErrors['error'] : "" ?></p>
                             </div>
                         </div>
                     </div>
@@ -49,12 +49,11 @@
                     </div>
 
                     <div class="row sm-gutter">
-                        <button name="btn_login" class="login__btn">Đăng Nhập</button>
+                        <button name="btn_loginAdmin" class="login__btn">Đăng Nhập</button>
                     </div>
 
                     <div class="row sm-gutter">
-                        <p class="login__link">Nếu bạn chưa có tài khoản, hãy <a href="index.php?controller=authentication&action=showregister&module=web">Đăng Ký</a> ngay! </p>
-                        <p class="login__link">Đăng nhập với tư cách quản trị viên: <a href="index.php?controller=authentication&action=showloginAdmin&module=web">Đăng nhập ngay!</a></p>
+                        <p class="login__link">Nếu bạn chưa có tài khoản, hãy <a href="index.php?controller=authentication&action=showregisterAdmin&module=web">Đăng Ký</a> ngay! </p>
                     </div>
                     
                 </div>
@@ -62,7 +61,7 @@
 
             </div>
         </form>
+
     </div>
 </div>
-
 <?php include_once("views/web/layouts/footer.php") ?>

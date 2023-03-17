@@ -16,6 +16,25 @@ class Product extends Model
     }
 
 
+    public function getNewProduct($limit = 4)
+    {
+        $sql = "SELECT * FROM product LIMIT $limit";
+
+        $result = $this->dbConnection->query($sql);
+
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNewProductByPK($limit = 4)
+    {
+        $sql = "SELECT * FROM product  WHERE category_id = 18 LIMIT $limit";
+
+        $result = $this->dbConnection->query($sql);
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function create($data)
     {
         $category_id = $data['category_id'];

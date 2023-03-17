@@ -4,10 +4,10 @@
 <div class="container container__shop">
     <div class="grid wide">
         <div class="row sm-gutter">
-            <h1 class="shop__title">Đăng Ký</h1>
+            <h1 class="shop__title">Đăng Ký ADMIN</h1>
         </div>
         
-        <form action="index.php?controller=authentication&action=register&module=web" class="check__out_form" method="POST">
+        <form action="index.php?controller=authentication&action=registerAdmin&module=web" class="check__out_form" method="POST">
             <div class="row sm-gutter">
                 <div class="col l-3 c-0 m-0"></div>
                 <div class="col l-6 m-12 c-12">

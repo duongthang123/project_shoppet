@@ -2,13 +2,14 @@
 
 require_once("app/Model/Model.php");
 
-class User extends Model
-{
-    protected $table = "users"; 
 
-    public function getUserByEmailPassword($email, $password) 
+class Admin extends Model
+{
+    protected $table = 'role';
+
+    public function getAdminByEmailPassword($email, $password) 
     {
-        $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+        $sql = "SELECT * FROM role WHERE email = '$email' AND password = '$password'";
 
         $result = $this->dbConnection->query($sql);
 
@@ -24,8 +25,8 @@ class User extends Model
         }
     }
 
-    public function findUserByEmail($email) {
-        $sql = "SELECT * FROM users WHERE email = '$email'";
+    public function findAdminByEmail($email) {
+        $sql = "SELECT * FROM role WHERE email = '$email'";
 
         $result = $this->dbConnection->query($sql);
 
@@ -38,13 +39,14 @@ class User extends Model
         }
     }
 
-    public function createUser($data)
+    public function createAdmin($data)
     {
         $name = $data['name'];
         $email = $data['email'];
-        $password = md5($data['password']);
+        $password = sha1($data['password']);
+        // $password = $data['password'];
 
-        $sql = "INSERT INTO users (name, email, password) VALUES('$name', '$email', '$password')";
+        $sql = "INSERT INTO role (name, email, password) VALUES('$name', '$email', '$password')";
 
         return $this->dbConnection->query($sql);
     }
