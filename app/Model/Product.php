@@ -15,7 +15,7 @@ class Product extends Model
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getProductForShop($limit = 8)
+    public function getProductForShop($limit = 16)
     {
         $sql = "SELECT * FROM product LIMIT $limit";
 
@@ -23,6 +23,19 @@ class Product extends Model
 
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getProductById($product_id)
+    {
+        $sql = "SELECT product.id, product.category_id, product.img,
+        product.price, product.quantity, product.description, product.name AS 'product_name', category.name AS 'category_name' 
+        
+        FROM product INNER JOIN category on product.category_id = category.id WHERE product.id = $product_id";
+
+        $result = $this->dbConnection->query($sql);
+
+        // print_r($result->fetch_assoc());die();
+        return $result->fetch_assoc();
     }
 
     public function getProductByCategory($category_id)

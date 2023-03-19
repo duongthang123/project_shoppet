@@ -110,18 +110,12 @@
                                     <i class="header__nav-icon ti-angle-down"></i>
                                 </a>
                                 <ul class="header__subnav">
-                                    <li class="header__subnav-item">
-                                        <a href="shopDetails.html" class="header__subnav-link">Alaska Malamute</a>
-                                    </li>
-                                    <li class="header__subnav-item">
-                                        <a href="#" class="header__subnav-link">Beagle</a>
-                                    </li>
-                                    <li class="header__subnav-item">
-                                        <a href="#" class="header__subnav-link">Corgi</a>
-                                    </li>
-                                    <li class="header__subnav-item">
-                                        <a href="#" class="header__subnav-link">Golden Retriever</a>
-                                    </li>
+
+                                    <?php foreach($categories as $category) {?>
+                                        <li class="header__subnav-item">
+                                            <a href="index.php?controller=shopgrid&action=showProductByCategory&module=web&category_id=<?php echo $category['id'] ?>" class="header__subnav-link"><?php echo $category['name'] ?></a>
+                                        </li>
+                                    <?php }?>
                                 </ul>
                             </li>
                             <li class="header__nav-item header__nav-parent">

@@ -1,6 +1,4 @@
-
-
-// toggle menu
+//toggle menu
 const menu__mobile = document.getElementById("menu__mobile");
 const list = document.getElementById("header__nav-list");
 
@@ -22,21 +20,21 @@ menuParent.addEventListener("click", function(){
 
 
 // active category
-const categorys = document.querySelectorAll(".category__list .category__item_link");
+// const categorys = document.querySelectorAll(".category__list .category__item_link");
 
 
 
-for(let i=0; i<categorys.length; i++) {
-    categorys[i].addEventListener("click", function(e){
-        e.preventDefault();
-        categorys.forEach((other) => {
-            other.classList.remove("category__item_link--active");
-        });
-        categorys[i].classList.add("category__item_link--active");
-        window.location.href = categorys[i].href;
+// for(let i=0; i<categorys.length; i++) {
+//     categorys[i].addEventListener("click", function(e){
+//         e.preventDefault();
+//         categorys.forEach((other) => {
+//             other.classList.remove("category__item_link--active");
+//         });
+//         categorys[i].classList.add("category__item_link--active");
+//         window.location.href = categorys[i].href;
 
-    });
-}
+//     });
+// }
 
 // const categorys = document.querySelectorAll(".category__list .category__item_link");
 
@@ -67,3 +65,7 @@ for(let i=0; i<categorys.length; i++) {
 //         menus[i].classList.add("header__nav-link--active");
 //     })
 // }
+
+
+// tăng value input
+

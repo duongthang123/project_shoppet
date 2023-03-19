@@ -31,7 +31,6 @@ class ShopgridController
         $categories = $this->category->all();
         $products = $this->product->getProductByCategory($idCategory);
         $nameCategory = $this->category->findCategoryById($idCategory);
-        // print_r($nameCategory[0]['name']);die();
         require "views/web/shopgrid/shopgrid.php";
 
     }

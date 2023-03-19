@@ -65,17 +65,17 @@
 
                                     <ul class="footer__follow_list">
                                         <li class="footer__follow_item">
-                                            <a href="" class="footer__follow_link">
+                                            <a href="#" class="footer__follow_link">
                                                 <i class="footer__follow-icon ti-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="footer__follow_item">
-                                            <a href="" class="footer__follow_link">
+                                            <a href="#" class="footer__follow_link">
                                                 <i class="footer__follow-icon ti-youtube"></i>
                                             </a>
                                         </li>
                                         <li class="footer__follow_item">
-                                            <a href="" class="footer__follow_link">
+                                            <a href="#" class="footer__follow_link">
                                                 <i class="footer__follow-icon ti-instagram"></i>
                                             </a>
                                         </li>

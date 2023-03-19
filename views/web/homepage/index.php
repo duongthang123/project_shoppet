@@ -22,7 +22,7 @@
                                             <i  class="content__action_like ti-heart"></i>
                                             <i  class="content__action_search ti-search"></i>
                                         </div>
-                                        <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
+                                        <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__action_btn">Mua Ngay</a>
                                     </div>
                                 </div>
                                 
@@ -38,14 +38,14 @@
                                             <i class="content__product_star-icon ti-star"></i>
                                         </div>
                                     </div>
-                                    <a href="" class="content__product_name"><?php echo $product['name'] ?></a>
+                                    <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
                                     <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
                                 </div>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
-                <a href="shopgrid.html" class="btn">Xem Thêm >></a>
+                <a href="index.php?controller=shopgrid&action=showProductByCategory&module=web&category_id=<?php echo $product['category_id'] ?>" class="btn">Xem Thêm >></a>
             </div>
         </div>
 
@@ -63,7 +63,7 @@
                                             <i  class="content__action_like ti-heart"></i>
                                             <i  class="content__action_search ti-search"></i>
                                         </div>
-                                        <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
+                                        <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__action_btn">Mua Ngay</a>
                                     </div>
                                 </div>
                                 
@@ -79,14 +79,14 @@
                                             <i class="content__product_star-icon ti-star"></i>
                                         </div>
                                     </div>
-                                    <a href="" class="content__product_name"><?php echo $product['name'] ?></a>
+                                    <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
                                     <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
                                 </div>
                             </div>
                         </div>
                     <?php }?>
                 </div>
-                <a href="shopgrid.html" class="btn">Xem Thêm >></a>
+                <a href="index.php?controller=shopgrid&action=showProductByCategory&module=web&category_id=<?php echo $product['category_id'] ?>" class="btn">Xem Thêm >></a>
             </div>
         </div>
         
@@ -104,7 +104,7 @@
                                             <i  class="content__action_like ti-heart"></i>
                                             <i  class="content__action_search ti-search"></i>
                                         </div>
-                                        <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
+                                        <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__action_btn">Mua Ngay</a>
                                     </div>
                                 </div>
                                 
@@ -120,14 +120,14 @@
                                             <i class="content__product_star-icon ti-star"></i>
                                         </div>
                                     </div>
-                                    <a href="" class="content__product_name"><?php echo $product['name'] ?></a>
+                                    <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
                                     <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
                                 </div>
                             </div>
                         </div>
                     <?php }?>
                 </div>
-                <a href="shopgrid.html" class="btn">Xem Thêm >></a>
+                <a href="index.php?controller=shopgrid&action=showProductByCategory&module=web&category_id=<?php echo $product['category_id'] ?>" class="btn">Xem Thêm >></a>
             </div>
         </div>
 
@@ -145,7 +145,7 @@
                                         <i  class="content__action_like ti-heart"></i>
                                         <i  class="content__action_search ti-search"></i>
                                     </div>
-                                    <a href="shopDetails.html" class="content__action_btn">Mua Ngay</a>
+                                    <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__action_btn">Mua Ngay</a>
                                 </div>
                             </div>
                             
@@ -161,14 +161,14 @@
                                         <i class="content__product_star-icon ti-star"></i>
                                     </div>
                                 </div>
-                                <a href="" class="content__product_name"><?php echo $product['name'] ?></a>
+                                <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
                                 <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
                             </div>
                         </div>
                     </div>
                     <?php }?>
                 </div>
-                <a href="shopgrid.html" class="btn">Xem Thêm >></a>
+                <a href="index.php?controller=shopgrid&action=showProductByCategory&module=web&category_id=<?php echo $product['category_id'] ?>" class="btn">Xem Thêm >></a>
             </div>
         </div>
     </div>

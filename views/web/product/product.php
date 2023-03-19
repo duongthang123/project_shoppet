@@ -23,34 +23,49 @@
 
             <div class="col l-10 m-12 c-12">
                 <div class="row sm-gutter">
-                    <h3 class="shop__content_title">
-                        <?php echo isset($nameCategory[0]['name']) ? $nameCategory[0]['name'] : 'Thú Cưng' ?>
-                    </h3>
-                </div>
-                <div class="row sm-gutter">
-                    <div class="shop__content_top">
-                        <div class="shop__top_select">
-                            <label class="shop__top_lable">Sắp xếp:</label>
-                            <select name="" id="" class="shop__select_list">
-                                <option value="">Sắp theo giá: Thấp -> Cao</option>
-                                <option value="">Sắp theo giá: Cao -> Thấp</option>
-                            </select>
+                    <div class="col l-5 m-12 c-12">
+                        <div class="shop__detail_left">
+                            <img src="<?php echo $target_file.$product['img'] ?>" alt="Meo" class="shop__detail_img">
                         </div>
-
-                        <div class="shop__top_quantity">
-                            Số sản phẩm: 
-                            <?php 
-                                $count = 0;
-                                foreach($products as $product) {
-                                    $count++;
-                                }
-                                echo $count;
-                            ?>
+                    </div>
+                    
+                    <div class="col l-7 m-12 c-12">
+                        <div class="shop__detail_right">
+                            <h2 class="shop__detail_name"><?php echo $product['product_name'] ?></h2>
+                            <p class="shop__detail_price"><?php echo $product['price'] ?> đ</p>
+                            <div class="shop__detail_quantity">
+                                <label>Số Lượng: </label>
+                                <div class="quantity">
+                                    <span id="quantity_des" class="des qtybtn">-</span>
+                                    <input id="quantity_input" type="number" autocomplete="off" min="1" value="1" name="quantity" class="shop__detail_input">
+                                    <span id="quantity_inc" class="inc qtybtn">+</span>
+                                </div>
+                                <button class="shop__detail_btn btn">Mua Ngay</button>
+                            </div>
+                            <p class="shop__detail_idproduct">Mã sản phẩm: <?php echo $product['id'] ?></p>
+                            <p class="shop__detail_statusproduct">Tình trạng: <?php echo isset($product['price']) > 0 ? "Còn hàng" : "Hết hàng" ?></p>
+                            <p class="shop__detail_cateproduct">Danh mục: <?php echo $product['category_name'] ?></p>
                         </div>
                     </div>
                 </div>
+
                 <div class="row sm-gutter">
-                    <?php foreach($products as $product) {?>
+                    <div class="shop__deatil_des">
+                        <h3 class="shop__deatil_des-title">Thông tin sản phẩm</h3>
+                        <p class="shop__detail_des-content">
+                            <?php echo $product['description'] ?>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row sm-gutter">
+                    <div class="shop__deatil_bottom">
+                        <h3 class="shop__deatil_bottom-title">SẢN PHẨM TƯƠNG TỰ</h3>
+                    </div>
+                </div>
+                <div class="row sm-gutter">
+                    <?php foreach(array_slice($products, 0 ,8) as $product) {?>
+                       
                         <div class="col c-6 m-4 l-3">
                             <div class="content__product">
                                 <div class="content__product-img">
@@ -81,7 +96,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -89,4 +104,20 @@
     </div>
 </div>
 
-<?php include("views/web/layouts/footer.php") ?>
+<script>
+    const quantity_inputt = document.getElementById("quantity_input");
+    const quantity_des = document.getElementById("quantity_des");
+    const quantity_inc = document.getElementById("quantity_inc");
+
+    quantity_inc.addEventListener("click", () =>{
+        quantity_inputt.value = parseInt(quantity_inputt.value) + 1;
+    });
+
+    quantity_des.addEventListener("click", () =>{
+        if(quantity_inputt.value > 0) {
+            quantity_inputt.value = parseInt(quantity_inputt.value) - 1;
+        }
+    });
+</script>
+
+<?php include_once("views/web/layouts/footer.php") ?>
