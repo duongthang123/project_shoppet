@@ -119,8 +119,6 @@ class AuthenticationController
 
                 $email = $_POST['email'];
                 $password = sha1($_POST['password']);
-                // $password = $_POST['password'];
-                // print_r($password);die();
                 $admin = $adminsResponstory->getAdminByEmailPassword($email, $password);
                 
                 if($admin) {

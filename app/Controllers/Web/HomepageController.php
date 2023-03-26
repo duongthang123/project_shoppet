@@ -16,18 +16,12 @@ class HomepageController {
 
     public function index() 
     {
+        $target_file = "public/assets/admin/img/";
+        $products = $this->product->getNewProduct();
+        $productPk = $this->product->getNewProductByPK();
         
-        if(!isset($_SESSION['user'])) {
-            header("location: index.php?controller=authentication&action=showlogin&module=web");
-        } else {
-            
-            $target_file = "public/assets/admin/img/";
-            $products = $this->product->getNewProduct();
-            $productPk = $this->product->getNewProductByPK();
-            
-            $categories = $this->category->all();
-            require_once("views/web/homepage/index.php");
-        }
+        $categories = $this->category->all();
+        require_once("views/web/homepage/index.php");
         
     }
 

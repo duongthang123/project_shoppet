@@ -38,7 +38,7 @@ menuParent.addEventListener("click", function(){
 
 // const categorys = document.querySelectorAll(".category__list .category__item_link");
 
-
+// console.log(categorys);
 
 // categorys.forEach((category) => {
 //     category.addEventListener("click", function(e){
@@ -49,16 +49,15 @@ menuParent.addEventListener("click", function(){
 //         categorys.classList.add("category__item_link--active");
 //         window.location.href = category.href;
 //     });
-// }
-
+// }); 
 // active menu
 
 // const menus = document.querySelectorAll(".header__nav-item .header__nav-link");
-// console.log(menus);
+// console.log("1");
 
 // for(let i = 0; i< menus.length; i++) {
 //     menus[i].addEventListener("mousedown", function(e) {
-//         // e.preventDefault();
+//         e.preventDefault();
 //         menus.forEach((other) => {
 //             other.classList.remove("header__nav-link--active");
 //         });
@@ -69,3 +68,19 @@ menuParent.addEventListener("click", function(){
 
 // tăng value input
 
+    const quantity_inputt = document.getElementById("quantity_input");
+    const quantity_des = document.getElementById("quantity_des");
+    const quantity_inc = document.getElementById("quantity_inc");
+
+    quantity_inc.addEventListener("click", () =>{
+        quantity_inputt.value = parseInt(quantity_inputt.value) + 1;
+    });
+
+    quantity_des.addEventListener("click", () =>{
+        if(quantity_inputt.value > 0) {
+            quantity_inputt.value = parseInt(quantity_inputt.value) - 1;
+        }
+    });
+
+
+    

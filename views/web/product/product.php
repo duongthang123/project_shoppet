@@ -32,17 +32,19 @@
                     <div class="col l-7 m-12 c-12">
                         <div class="shop__detail_right">
                             <h2 class="shop__detail_name"><?php echo $product['product_name'] ?></h2>
-                            <p class="shop__detail_price"><?php echo $product['price'] ?> đ</p>
-                            <div class="shop__detail_quantity">
+                            <p class="shop__detail_price"><?php echo number_format($product['price'], 0, ".", ",") ?> đ</p>
+                            <form action="index.php?controller=cart&action=addToCart&module=web" method="POST" class="shop__detail_quantity">
                                 <label>Số Lượng: </label>
                                 <div class="quantity">
                                     <span id="quantity_des" class="des qtybtn">-</span>
-                                    <input id="quantity_input" type="number" autocomplete="off" min="1" value="1" name="quantity" class="shop__detail_input">
+                                    <input id="quantity_input" type="text" autocomplete="off" min="1" value="1" name="product_qt" class="shop__detail_input">
+                                    <input type="hidden" name="product_id" value="<?php echo $product['id'] ?>" class="shop__detail_input">
                                     <span id="quantity_inc" class="inc qtybtn">+</span>
                                 </div>
-                                <button class="shop__detail_btn btn">Mua Ngay</button>
-                            </div>
-                            <p class="shop__detail_idproduct">Mã sản phẩm: <?php echo $product['id'] ?></p>
+                                <!-- <a href="index.php?controller=cart&action=addToCart&module=web&product_id=<?php echo $product['id'] ?>" class="shop__detail_btn btn">Mua Ngay</a> -->
+                                <button name="btn_addToCart" class="shop__detail_btn btn">Mua Ngay</button>
+                            </form>
+                            <p class="shop__detail_idproduct" >Mã sản phẩm: <?php echo $product['id'] ?></p>
                             <p class="shop__detail_statusproduct">Tình trạng: <?php echo isset($product['price']) > 0 ? "Còn hàng" : "Hết hàng" ?></p>
                             <p class="shop__detail_cateproduct">Danh mục: <?php echo $product['category_name'] ?></p>
                         </div>
@@ -92,7 +94,7 @@
                                         </div>
                                     </div>
                                     <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
-                                    <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
+                                    <h3 class="content__product_price"><span><?php echo number_format($product['price'], 0, ".", ",") ?></span> đ</h3>
                                 </div>
                             </div>
                         </div>
@@ -104,20 +106,5 @@
     </div>
 </div>
 
-<script>
-    const quantity_inputt = document.getElementById("quantity_input");
-    const quantity_des = document.getElementById("quantity_des");
-    const quantity_inc = document.getElementById("quantity_inc");
-
-    quantity_inc.addEventListener("click", () =>{
-        quantity_inputt.value = parseInt(quantity_inputt.value) + 1;
-    });
-
-    quantity_des.addEventListener("click", () =>{
-        if(quantity_inputt.value > 0) {
-            quantity_inputt.value = parseInt(quantity_inputt.value) - 1;
-        }
-    });
-</script>
 
 <?php include_once("views/web/layouts/footer.php") ?>

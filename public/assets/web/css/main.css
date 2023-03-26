@@ -757,6 +757,13 @@ html {
     align-items: center;
 }
 
+.cart__title-quatity-main button {
+    width: 30px;
+    background: var(--primary-color);
+    outline: none;
+    border: none;
+    padding: 2px 0;
+}
 .cart__input-product {
     width: 40px;
     border: none;
@@ -774,6 +781,10 @@ html {
     border: none;
     border-radius: 2px;
     cursor: pointer;
+}
+.quantity_des_cart,
+.quantity_inc_cart {
+    padding: 2px 10px;
 }
 
 .des__cart:hover,
@@ -795,7 +806,11 @@ html {
     padding: 2px 2px;
 }
 
-.cart__title-action:hover {
+.cart__title-action-link {
+    text-decoration: none;
+    color:#6f6f6f ;
+}
+.cart__title-action-link:hover {
     color: var(--primary-color);
     cursor: pointer;
 }
@@ -1001,3 +1016,5 @@ html {
 .login__link a {
     color: blue;
 }
+
+

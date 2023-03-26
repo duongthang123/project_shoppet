@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
-                                    <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
+                                    <h3 class="content__product_price"><span><?php echo number_format($product['price'], 0, ".", ",") ?></span> đ</h3>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                         </div>
                                     </div>
                                     <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
-                                    <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
+                                    <h3 class="content__product_price"><span><?php echo number_format($product['price'], 0, ".", ",")  ?></span> đ</h3>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                         </div>
                                     </div>
                                     <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
-                                    <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
+                                    <h3 class="content__product_price"><span><?php echo number_format($product['price'], 0, ".", ",") ?></span> đ</h3>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
                                     </div>
                                 </div>
                                 <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__product_name"><?php echo $product['name'] ?></a>
-                                <h3 class="content__product_price"><span><?php echo $product['price'] ?></span> VNĐ</h3>
+                                <h3 class="content__product_price"><span><?php echo number_format($product['price'], 0, ".", ",") ?></span> đ</h3>
                             </div>
                         </div>
                     </div>

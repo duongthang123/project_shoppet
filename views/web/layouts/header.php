@@ -64,7 +64,7 @@
                                         </a> 
                                     <?php }else {?>
 
-                                        <a href="index.php?controller=authentication&action=showlogin&module=web" class="header__user-login">
+                                        <a href="#" class="header__user-login">
                                             <?php echo isset($_SESSION['user']) ? $_SESSION['user']['name'] : 'Đăng Nhập'?>
                                         </a>
 
@@ -75,7 +75,7 @@
                                 </a>
                             </li>
                             <li class="header__user-item header__cart">
-                                <a href="Cart.html" class="header__user-link">
+                                <a href="index.php?controller=cart&action=index&module=web" class="header__user-link">
                                     <!-- <i class="ti-shopping-cart header__user-cart-icon"></i> -->
                                     <i class="header__user-cart-icon fa-solid fa-cart-shopping"></i>
                                     <!-- <span class="header__user-cart">Cart</span> -->
@@ -136,7 +136,12 @@
                                 <a href="#" class="header__nav-link">LIÊN HỆ</a>
                             </li>
                             <li class="header__nav-item none_PC none__desktop none__tablet show__on_mobile">
-                                <a href="index.php?controller=authentication&action=logout&module=web" class="header__nav-link">Đăng Xuất</a>
+                                <?php if(!isset($_SESSION['user'])) {?>
+                                    <a href="index.php?controller=authentication&action=showlogin&module=web" class="header__nav-link">Đăng Nhập</a>
+                                    
+                                <?php }else {?>
+                                    <a href="index.php?controller=authentication&action=logout&module=web" class="header__nav-link">Đăng Xuất</a>
+                                <?php } ?>
                             </li>
                         </ul>
 
@@ -148,6 +153,6 @@
 
     </div>
 
-    <script src="./public/assets/web/js/main.js"></script>
+    <!-- <script src="./public/assets/web/js/main.js"></script> -->
 </body>
 </html>

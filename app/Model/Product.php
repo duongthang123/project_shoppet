@@ -59,7 +59,7 @@ class Product extends Model
 
     public function getNewProductByPK($limit = 4)
     {
-        $sql = "SELECT * FROM product  WHERE category_id = 18 LIMIT $limit";
+        $sql = "SELECT * FROM product  WHERE category_id = 6 LIMIT $limit";
 
         $result = $this->dbConnection->query($sql);
 
