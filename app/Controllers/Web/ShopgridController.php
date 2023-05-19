@@ -32,6 +32,5 @@ class ShopgridController
         $products = $this->product->getProductByCategory($idCategory);
         $nameCategory = $this->category->findCategoryById($idCategory);
         require "views/web/shopgrid/shopgrid.php";
-
     }
 }

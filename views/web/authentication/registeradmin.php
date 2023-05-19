@@ -31,7 +31,7 @@
                         <div class="col l-12 -12 c-12">
                             <div class="check__out_info">
                                 <lable class="checkout__title login__title">Email</lable>
-                                <input type="email" name="email" id="" value="<?php echo isset($_POST['email']) ? $_POST['email'] :'' ?>" placeholder="Nhập email..." class="checkout__name-input login__input">
+                                <input type="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] :'' ?>" placeholder="Nhập email..." class="checkout__name-input login__input">
                             </div>
 
                             <div class="error">

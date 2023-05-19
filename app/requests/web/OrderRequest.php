@@ -41,6 +41,11 @@ class OrderRequest extends BaseRequest
         // email
         if(empty($data['email'])) {
             $this->errors['email'] = "Không được để trống email !";
+        } else {
+            if(!preg_match('/^([a-zA-Z0-9])+([a-z0-9\._-])*@([a-zA-Z0-9_-])+\.[A-Za-z]{2,6}$/', $data['email'])) {
+                $this->errors['email'] = "Email không hợp lệ !";
+
+            }
         }
 
         return $this->errors;

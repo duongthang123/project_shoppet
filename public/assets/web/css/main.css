@@ -1017,4 +1017,74 @@ html {
     color: blue;
 }
 
+/* Model */
+
+.model {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    display: none;
+}
+
+.model.open {
+    display: flex;
+}
+.model__container {
+    position: relative;
+    width: 600px;
+    max-width: calc(100% - 26px);
+    min-height: 200px;
+    background-color: #fff;
+    color: #fff;
+    border-radius: 4px;
+    
+}
+.model__header {
+    font-family: 'Coiny', cursive;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    margin: 0px;
+    background-color: var(--primary-color);
+    padding: 30px 12px 14px;
+    text-align: center;
+}
+
+.model__close {
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    top: 0;
+    right: 0;
+    padding: 6px;
+}
+.model__header_title {
+    margin: 0;
+    line-height: 26px;
+    font-size: 26px;
+}
+
+.model__close-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.model__content h4 {
+    color: #333333;
+    font-size: 18px;
+    font-family: 'Coiny', cursive;
+    text-align: center;
+    line-height: 18px;
+
+}
+
+.model__btn {
+    max-height: 42px;
+    font-size: 16px;
+}
 

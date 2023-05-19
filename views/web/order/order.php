@@ -63,7 +63,7 @@
                         <div class="col l-12 -12 c-12">
                             <div class="check__out_info">
                                 <lable class="checkout__title">Địa Chỉ Email:</lable>
-                                <input type="text" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="Nhập email..." class="checkout__name-input">
+                                <input type="email" require name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="Nhập email..." class="checkout__name-input">
                             </div>
                             <div class="error">
                                 <p><?php echo isset($orderErrors['email']) ? $orderErrors['email'] : "" ?></p>

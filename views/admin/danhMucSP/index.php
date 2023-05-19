@@ -17,67 +17,7 @@
 </head>
 <body>
     <input type="checkbox" id="menu-toggle">
-    <!-- <div class="sidebar">
-        <div class="side-header">
-            <h3>A<span>dmin</span></h3>
-        </div>
     
-        <div class="side-content">
-            <div class="profile">
-                <div class="profile-img bg-img" style="background-image: url('public/assets/admin/img/1.jpeg')"></div>
-                <h4>David Green</h4>
-                <small>Art Director</small>
-            </div>
-
-            <div class="side-menu">
-                <ul>
-                    <li>
-                        <a class="side-menu-link active" href="index.php?controller=homepage&action=index&module=admin" >
-                            <span class="las la-home"></span>
-                            <small>Trang chủ</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="side-menu-link" href="">
-                            <span class="las la-user-alt"></span>
-                            <small>Profile</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="side-menu-link" href="">
-                            <span class="las la-envelope"></span>
-                            <small>Mailbox</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="side-menu-link" href="index.php?controller=product&action=index&module=admin">
-                            <span class="las la-clipboard-list"></span>
-                            <small>Danh sách sản phẩm</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="side-menu-link" href="index.php?controller=category&action=index&module=admin">
-                            <span class="las la-clipboard-list"></span>
-                            <small>Danh Mục</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="side-menu-link" href="index.php?controller=donHangMoi&action=index&module=admin">
-                            <span class="las la-shopping-cart"></span>
-                            <small>Trang bán hàng</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="side-menu-link" href="">
-                            <span class="las la-tasks"></span>
-                            <small>Tasks</small>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </div> -->
     <?php include("views/admin/layouts/sildebar.php") ?>
     
     <div class="main-content">

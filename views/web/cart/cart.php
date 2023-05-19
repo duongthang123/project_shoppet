@@ -55,7 +55,7 @@
 
                                 </td>
                                 <td class="cart__title-action">
-                                    <a class="cart__title-action-link" href="index.php?controller=cart&action=deleteItem&module=web&product_id=<?php echo $itemCart['product_id'] ?>">X</a>
+                                    <a href="index.php?controller=cart&action=deleteItem&module=web&product_id=<?php echo $itemCart['product_id'] ?>" id="delete"  class="cart__title-action-link delete" >X</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -110,9 +110,26 @@
     </div>
 </div>
 
+<div id="model" class="model">
+    <div id="model__container" class="model__container">
+        <div class="model__header">
+            <h2 class="model__header_title">Thông Báo</h2>
+        </div>
+
+        <div id="close__model" class="model__close">
+            <i class="ti-close model__close-icon"></i>
+        </div>
+
+        <div class="model__content">
+            <h4>Bạn có chắc chắn muốn xóa !</h4>
+        </div>
+
+        <a class="btn model__btn">Đồng Ý</a>
+    </div>
+</div>
 <script>
 
-    const quantity_main= document.querySelectorAll(".cart__title-quatity-main");
+    const quantity_main = document.querySelectorAll(".cart__title-quatity-main");
 
     quantity_main.forEach(function(quantity_input) {
         const quantity_des = quantity_input.querySelector(".quantity_des_cart");
@@ -133,5 +150,27 @@
     cartBntFail.addEventListener('click', () =>{
         alert("Không có sản phẩm nào trong giỏ hàng!")
     });
+
+    // model
+
+    const deleteItem = document.getElementById("delete");
+    const model = document.getElementById("model");
+    const closeModel = document.getElementById("close__model");
+    const modelContainer = document.getElementById("model__container");
+    function showModel() {
+        model.classList.add("open");
+    }
+
+    function hideModel() {
+        model.classList.remove("open");
+    }
+
+    deleteItem.addEventListener("click", showModel);
+
+    closeModel.addEventListener('click', hideModel);
+    model.addEventListener('click', hideModel);
+    modelContainer.addEventListener('click', (e)=> {
+        e.stopPropagation();
+    })
 </script>
 <?php include("views/web/layouts/footer.php") ?>

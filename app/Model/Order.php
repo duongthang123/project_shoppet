@@ -5,7 +5,6 @@ require_once("app/Model/Model.php");
 class Order extends Model
 {
     protected $table = 'oders';
-
     public function createOrder($data){
         $userId = $_SESSION['user']['id'];
         $fullname = $data['fullname'];
@@ -30,4 +29,30 @@ class Order extends Model
 
         return $result->fetch_assoc();
     }
+
+    public function getAllOrders()
+    {
+        $sql = "SELECT * FROM oders ";
+        // $sql = "SELECT oders.id as id, fullname, email, phoneNumber, city, address, pay, oders.total_money ,
+        // oder_details.id as oder_details_id, product.name
+        // FROM oders inner join oder_details on oders.id = oder_details.oder_id INNER join product on oder_details.product_id = product.id
+        // WHERE oder_id = 25";
+
+        $result = $this->dbConnection->query($sql);
+        // print_r($result->fetch_all(MYSQLI_ASSOC));die();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    // public function getAllOrders()
+    // {
+    //     // $sql = "SELECT * FROM oders ";
+    //     $sql = "SELECT oders.id as id, fullname, email, phoneNumber, city, address, pay, oders.total_money ,
+    //     oder_details.id as oder_details_id, product.name
+    //     FROM oders inner join oder_details on oders.id = oder_details.oder_id INNER join product on oder_details.product_id = product.id";
+
+    //     $result = $this->dbConnection->query($sql);
+    //     // print_r($result->fetch_all(MYSQLI_ASSOC));die();
+    //     return $result->fetch_all(MYSQLI_ASSOC);
+    // }
+    
 }

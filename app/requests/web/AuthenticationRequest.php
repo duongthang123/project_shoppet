@@ -8,6 +8,11 @@ class AuthenticationRequest extends BaseRequest
     {
         if(empty($data['email'])) {
             $this->errors['email'] = "Không được để trống email !";
+        } else {
+            if(!preg_match('/^([a-zA-Z0-9])+([a-z0-9\._-])*@([a-zA-Z0-9_-])+\.[A-Za-z]{2,6}$/', $data['email'])) {
+                $this->errors['email'] = "Email không hợp lệ !";
+
+            }
         }
 
         if(empty($data['password'])) {
@@ -27,9 +32,14 @@ class AuthenticationRequest extends BaseRequest
                 $this->errors['name'] = "Không được nhập số. Vui lòng nhập lại!";
             }
 
-        if(empty($data['email'])) {
-            $this->errors['email'] = "Không được để trống email !";
-        }
+            if(empty($data['email'])) {
+                $this->errors['email'] = "Không được để trống email !";
+            } else {
+                if(!preg_match('/^([a-zA-Z0-9])+([a-z0-9\._-])*@([a-zA-Z0-9_-])+\.[A-Za-z]{2,6}$/', $data['email'])) {
+                    $this->errors['email'] = "Email không hợp lệ !";
+    
+                }
+            }
 
         if(empty($data['password'])) {
             $this->errors['password'] = "Không được để trống password !";

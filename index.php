@@ -5,7 +5,6 @@ $controller = isset($_GET['controller']) ? ucfirst($_GET['controller']) . 'Contr
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
-
 $module = $_GET['module'] == 'web' ? 'Web' : 'Admin';
 
 require "app/Controllers/$module/$controller.php";

@@ -41,7 +41,6 @@
                                     <input type="hidden" name="product_id" value="<?php echo $product['id'] ?>" class="shop__detail_input">
                                     <span id="quantity_inc" class="inc qtybtn">+</span>
                                 </div>
-                                <!-- <a href="index.php?controller=cart&action=addToCart&module=web&product_id=<?php echo $product['id'] ?>" class="shop__detail_btn btn">Mua Ngay</a> -->
                                 <button name="btn_addToCart" class="shop__detail_btn btn">Mua Ngay</button>
                             </form>
                             <p class="shop__detail_idproduct" >Mã sản phẩm: <?php echo $product['id'] ?></p>
@@ -80,7 +79,6 @@
                                         <a href="index.php?controller=product&action=showProductByID&module=web&product_id=<?php echo $product['id'] ?>&category_id=<?php echo $product['category_id'] ?>" class="content__action_btn">Mua Ngay</a>
                                     </div>
                                 </div>
-                                
         
                                 <div class="content__product_info">
                                     <div class="content__product_top">
@@ -106,5 +104,21 @@
     </div>
 </div>
 
-
 <?php include_once("views/web/layouts/footer.php") ?>
+
+<script>
+    const quantity_inputt = document.getElementById("quantity_input");
+    const quantity_des = document.getElementById("quantity_des");
+    const quantity_inc = document.getElementById("quantity_inc");
+
+    quantity_inc.addEventListener("click", () =>{
+        quantity_inputt.value = parseInt(quantity_inputt.value) + 1;
+    });
+
+    quantity_des.addEventListener("click", () =>{
+        if(quantity_inputt.value > 1) {
+            quantity_inputt.value = parseInt(quantity_inputt.value) - 1;
+        }
+    });
+
+</script>

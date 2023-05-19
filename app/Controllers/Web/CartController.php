@@ -38,12 +38,10 @@ class CartController
 
     public function updateCart()
     {
-        // print_r("1");die();
         $productIdInput = $_POST['product_id_input'];
         $productQuantity = $_POST['quantity'];
         $this->cart->update($productIdInput, $productQuantity);
         header("location: index.php?controller=cart&action=index&module=web");
-        // print_r($productIdInput);die();
     }
     public function deleteItem()
     {

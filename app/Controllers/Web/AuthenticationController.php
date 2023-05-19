@@ -100,8 +100,6 @@ class AuthenticationController
 
     // ADMIN
 
-    
-
     public function showloginAdmin()
     {
         $id = $_GET['category_id'];

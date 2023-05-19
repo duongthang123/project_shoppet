@@ -44,10 +44,11 @@
 
                 <div class="content__fluid_newoderpd">
                     <ul class="new__order_list">
-                        <li class="new__order_item records table-responsive">
+                        <?php foreach($array as $order) {?>
+                            <li class="new__order_item records table-responsive">
                             <div class="new__order_item-header">
                                 <img src="public/assets/admin/img/logo.jpg" alt="" class="order__item_header_img">
-                                <div class="order__item_header_date">Ngày đặt: <span> 22/12/2002 00:30:12</span></div>
+                                <div class="order__item_header_date">Ngày đặt: <span> <?php echo $order['oder_date'] ?></span></div>
                             </div>
 
                             <div class="new__order_item-info">
@@ -62,16 +63,16 @@
                                 </div>
 
                                 <div class="order__info">
-                                    <div class="order__info-name">Tên Khách Hàng: <span>Dương Thắng</span></div>
+                                    <div class="order__info-name">Tên Khách Hàng: <span><?php echo $order['fullname']  ?></span></div>
                                     <div class="order__info_address">
                                         <lable class="order__info_address-name">Địa chỉ khách hàng:</lable>
-                                        <p class="order__info_address-main">Quận Bắc Từ Niêm - Hà Nội</p>
+                                        <p class="order__info_address-main"><?php echo $order['address'] ?> - <?php echo $order['city'] ?></p>
                                     </div>
-                                    <div class="order__info-phone">Số điện thoại: <span>098767351</span></div>
-                                    <div class="order__info-email">Email: <span>aad@gmail.com</span></div>
+                                    <div class="order__info-phone">Số điện thoại: <span><?php echo $order['phoneNumber'] ?></span></div>
+                                    <div class="order__info-email">Email: <span><?php echo $order['email'] ?></span></div>
                                 </div>
 
-                                <div class="new__order_id">Mã đơn hàng: <span>1</span></div>
+                                <div class="new__order_id">Mã đơn hàng: <span><?php echo $order['id'] ?></span></div>
                             </div>
 
                             <div class="new__order_item-table">
@@ -84,26 +85,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Sản phẩm 1</td>
-                                            <td>
-                                                200.000
-                                            </td>
-                                            <td>
-                                                2
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Sản phẩm 1</td>
-                                            <td>
-                                                200.000
-                                            </td>
-                                            <td>
-                                                2
-                                            </td>
-                                        </tr>
-                                        
+                                        <?php foreach($order['product'] as $iteam) {?> 
+                                            <tr>
+                                                <td><?php echo $iteam['name'] ?></td>
+                                                <td>
+                                                    <?php echo number_format($iteam['price'], 0, ".", ",") ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $iteam['quantity'] ?>
+                                                </td>
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
@@ -126,143 +117,42 @@
                                         <tr>
                                             <td class="order__total_title">
                                                 Tổng Giá
-                                                <td class="order__total_pay"><span>400.000 </span> VND</td>
+                                                <td class="order__total_pay"><span><?php echo number_format($order['total_money']) ?></span> VND</td>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="order__total_title">
                                                 Phí Ship
-                                                <td class="order__total_pay"><span>50.000 </span>VND</td>
+                                                <td class="order__total_pay"><span>
+                                                <?php
+                                                    $shiping = 50000; 
+                                                    echo number_format($shiping);
+                                                ?> </span>VND</td>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="order__total_title">
                                                 Tổng Thanh Toán
-                                                <td class="order__total_pay"><span>400.000 </span>VND</td>
+                                                <td class="order__total_pay"><span>
+                                                <?php 
+                                                    $total = $order['total_money'] + $shiping;
+                                                    echo number_format($total);
+                                                ?>
+                                                </span>VND</td>
                                             </td>
                                         </tr>
                                     </table>
                                     
                                 </div>
                             </div>
-
                             <div class="new__order_btn">
                                 <button class="order__btn_print">
                                     <i class="ti-printer"></i>
                                 </button>
                                 <button class="order__btn_succes">Xác Nhận</button>
                             </div>
-                        </li>
-
-                        <li class="new__order_item records table-responsive">
-                            <div class="new__order_item-header">
-                                <img src="public/assets/admin/img/logo.jpg" alt="" class="order__item_header_img">
-                                <div class="order__item_header_date">Ngày đặt: <span> 22/12/2002 00:30:12</span></div>
-                            </div>
-
-                            <div class="new__order_item-info">
-                                <div class="order__info">
-                                    <div class="order__info-name">Tên Shop: <span>Shop Bán Hàng</span></div>
-                                    <div class="order__info_address">
-                                        <lable class="order__info_address-name">Địa chỉ cửa hàng:</lable>
-                                        <p class="order__info_address-main">Quận Bắc Từ Niêm - Hà Nội</p>
-                                    </div>
-                                    <div class="order__info-phone">Số điện thoại: <span>098767351</span></div>
-                                    <div class="order__info-email">Email: <span>aad@gmail.com</span></div>
-                                </div>
-
-                                <div class="order__info">
-                                    <div class="order__info-name">Tên Khách Hàng: <span>Dương Thắng</span></div>
-                                    <div class="order__info_address">
-                                        <lable class="order__info_address-name">Địa chỉ khách hàng:</lable>
-                                        <p class="order__info_address-main">Quận Bắc Từ Niêm - Hà Nội</p>
-                                    </div>
-                                    <div class="order__info-phone">Số điện thoại: <span>098767351</span></div>
-                                    <div class="order__info-email">Email: <span>aad@gmail.com</span></div>
-                                </div>
-
-                                <div class="new__order_id">Mã đơn hàng: <span>1</span></div>
-                            </div>
-
-                            <div class="new__order_item-table">
-                                <table width="100%" class="order__table">
-                                    <thead>
-                                        <tr class="order__table-tr">
-                                            <th>Tên Sản Phẩm</th>
-                                            <th>Giá tiền</th>
-                                            <th>Số lượng</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Sản phẩm 1</td>
-                                            <td>
-                                                200.000
-                                            </td>
-                                            <td>
-                                                2
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Sản phẩm 1</td>
-                                            <td>
-                                                200.000
-                                            </td>
-                                            <td>
-                                                2
-                                            </td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="new__order_total">
-                                <div class="order__total_payment">
-                                    <h3 class="order__total_payment-tittle">Hình thức thanh toán</h3>
-                                    <p class="order__total_payment-main">
-                                        Thanh toán bằng thẻ
-                                        <i class="iconcheck ti-check"></i>
-                                    </p>
-                                    <p class="order__total_payment-main">
-                                        Thanh toán bằng tiền mặt
-                                    </p>
-                                </div>
-
-                                <div class="order__total_price">
-                                    <h3 class="order__total_price-tittle">Tổng thanh toán</h3>
-                                    <table>
-                                        <tr>
-                                            <td class="order__total_title">
-                                                Tổng Giá
-                                                <td class="order__total_pay"><span>400.000 </span> VND</td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="order__total_title">
-                                                Phí Ship
-                                                <td class="order__total_pay"><span>50.000 </span>VND</td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="order__total_title">
-                                                Tổng Thanh Toán
-                                                <td class="order__total_pay"><span>400.000 </span>VND</td>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                </div>
-                            </div>
-
-                            <div class="new__order_btn">
-                                <button class="order__btn_print">
-                                    <i class="ti-printer"></i>
-                                </button>
-                                <button class="order__btn_succes">Xác Nhận</button>
-                            </div>
-                        </li>
+                            </li>
+                        <?php } ?>       
                     </ul>
                 </div>
             
@@ -274,7 +164,7 @@
 
     <script>
         $id = document.getElementById("bntAdd").addEventListener("click", function() {
-            window.location.href = "index.php?controller=tinhTrangDH&action=index&module=admin";
+            window.location.href = "index.php?controller=OrderStatus&action=index&module=admin";
         })
 
         

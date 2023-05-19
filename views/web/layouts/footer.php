@@ -1,6 +1,4 @@
 
-
-    
         <div class="paging"></div>
 
         <div class="footer">
@@ -76,7 +74,6 @@
                                         <li class="footer__contact_item">
                                             <i class="footer__contact_icon ti-email"></i>
                                             <span class="footer__item_heading">Email:</span> abc@gmail.com
-                                            
                                         </li>
                                     </ul>
                                 </div>
@@ -114,7 +111,6 @@
     </div>
 
     <script src="./public/assets/web/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 </html>

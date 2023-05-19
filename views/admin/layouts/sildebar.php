@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?controller=donHangMoi&action=index&module=admin">
+                        <a href="index.php?controller=order&action=index&module=admin">
                             <span class="las la-shopping-cart"></span>
                             <small>Trang bán hàng</small>
                         </a>

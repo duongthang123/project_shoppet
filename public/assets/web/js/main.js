@@ -68,19 +68,38 @@ menuParent.addEventListener("click", function(){
 
 // tăng value input
 
-    const quantity_inputt = document.getElementById("quantity_input");
-    const quantity_des = document.getElementById("quantity_des");
-    const quantity_inc = document.getElementById("quantity_inc");
+    // const quantity_inputt = document.getElementById("quantity_input");
+    // const quantity_des = document.getElementById("quantity_des");
+    // const quantity_inc = document.getElementById("quantity_inc");
 
-    quantity_inc.addEventListener("click", () =>{
-        quantity_inputt.value = parseInt(quantity_inputt.value) + 1;
-    });
+    // quantity_inc.addEventListener("click", () =>{
+    //     quantity_inputt.value = parseInt(quantity_inputt.value) + 1;
+    // });
 
-    quantity_des.addEventListener("click", () =>{
-        if(quantity_inputt.value > 0) {
-            quantity_inputt.value = parseInt(quantity_inputt.value) - 1;
-        }
-    });
+    // quantity_des.addEventListener("click", () =>{
+    //     if(quantity_inputt.value > 0) {
+    //         quantity_inputt.value = parseInt(quantity_inputt.value) - 1;
+    //     }
+    // });
 
 
-    
+//
+// const deleteItem = document.getElementById("delete");
+//     const model = document.getElementById("model");
+//     const closeModel = document.getElementById("close__model");
+//     const modelContainer = document.getElementById("model__container");
+//     function showModel() {
+//         model.classList.add("open");
+//     }
+
+//     function hideModel() {
+//         model.classList.remove("open");
+//     }
+
+//     deleteItem.addEventListener("click", showModel);
+
+//     closeModel.addEventListener('click', hideModel);
+//     model.addEventListener('click', hideModel);
+//     modelContainer.addEventListener('click', (e)=> {
+//         e.stopPropagation();
+//     })

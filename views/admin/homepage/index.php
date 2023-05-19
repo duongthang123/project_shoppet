@@ -29,7 +29,7 @@
 
                     <div class="card">
                         <div class="card-head">
-                            <h2>107,200</h2>
+                            <h2><?php echo $countUsers ?></h2>
                             <span class="las la-user-friends"></span>
                         </div>
                         <div class="card-progress">

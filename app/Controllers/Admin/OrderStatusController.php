@@ -1,7 +1,8 @@
 <?php
 
-class TinhTrangDHController
+class OrderStatusController
 {
+    
     public function index()
     {
         require "views/admin/tinhTrangDH/index.php";

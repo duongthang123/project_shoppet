@@ -17,4 +17,14 @@ class OrderDetail extends Model
             $this->dbConnection->query($sql);
         }
     }
+
+    public function getOrderDetailsList($orderId) {
+        $sql = "SELECT product.name, product.price, oder_details.quantity, oder_details.oder_id FROM oder_details INNER join product
+                on oder_details.product_id = product.id WHERE oder_id = $orderId";
+        
+        $result = $this->dbConnection->query($sql);
+
+        // print_r($result->fetch_all(MYSQLI_ASSOC));die();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
