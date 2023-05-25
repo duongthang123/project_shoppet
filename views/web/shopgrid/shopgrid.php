@@ -24,7 +24,16 @@
             <div class="col l-10 m-12 c-12">
                 <div class="row sm-gutter">
                     <h3 class="shop__content_title">
-                        <?php echo isset($nameCategory[0]['name']) ? $nameCategory[0]['name'] : 'Thú Cưng' ?>
+                        <!-- <?php echo isset($nameCategory[0]['name']) ? $nameCategory[0]['name'] : 'Thú Cưng' ?> -->
+                        <?php
+                            if(isset($nameCategory[0]['name'])) {
+                                echo $nameCategory[0]['name'];
+                            } else if(isset($key)) {
+                                echo "Kết quả tìm kiếm..";
+                            } else {
+                                echo "Thú Cưng";
+                            }
+                        ?>
                     </h3>
                 </div>
                 <div class="row sm-gutter">

@@ -33,4 +33,17 @@ class ShopgridController
         $nameCategory = $this->category->findCategoryById($idCategory);
         require "views/web/shopgrid/shopgrid.php";
     }
+
+
+    public function search()
+    {
+        $key = $_POST['key'];
+        
+        $target_file = "public/assets/admin/img/";
+
+        $products = $this->product->searchProduct($key);
+        $categories = $this->category->all();
+        require "views/web/shopgrid/shopgrid.php";
+
+    }
 }

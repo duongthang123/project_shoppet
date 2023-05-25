@@ -49,12 +49,12 @@
                         
                         <ul class="header__user-list">
                             <!-- header Search -->
-                            <li class="header__user-item header__search">
-                                <input type="text" class="header__search-input">
-                                <button class="header__search-btn">
+                            <form action="index.php?controller=shopgrid&action=search&module=web" method="POST" class="header__user-item header__search">
+                                <input type="text" name="key" placeholder="Nhập từ khóa..." class="header__search-input">
+                                <button type="submit" class="header__search-btn">
                                     <i class="ti-search"></i>
                                 </button>
-                            </li>
+                            </form>
                             <li class="header__user-item none__mobile">
                                 <a href="index.php?controller=authentication&action=showlogin&module=web" class="header__user-link">
                                     <i class="header__user-login-icon fa-solid fa-user"></i>

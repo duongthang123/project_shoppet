@@ -15,6 +15,14 @@ class Product extends Model
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function searchProduct($key)
+    {
+        $sql = "SELECT product.id, product.name,  product.img, product.price, category.id AS 'category_id' FROM product INNER JOIN category on product.category_id = category.id 
+                WHERE product.name LIKE '%$key%' OR price LIKE '%$key%' OR category.name LIKE '%$key%'";
+        $result = $this->dbConnection->query($sql);
+        
+        return $result->fetch_all(MYSQLI_ASSOC);    
+}
     public function getProductForShop($limit = 16)
     {
         $sql = "SELECT * FROM product LIMIT $limit";
