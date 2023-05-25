@@ -46,4 +46,48 @@ class OrderController
 
         require "views/admin/donHangMoi/index.php";
     }
+
+    public function statusOrder()
+    {
+        $orderListConfirm = $this->order->listConfirmOrder();
+
+        require "views/admin/tinhTrangDH/index.php";
+    }
+
+    public function confirmOrder()
+    {
+        if(isset($_POST['confirm_order']))
+        {
+            $orderId = $_POST['order_id'];
+            $confirmOrder = $this->order->updateStatusOrder($orderId);
+
+            $orderListConfirm = $this->order->listConfirmOrder();
+
+            require "views/admin/tinhTrangDH/index.php";
+        }
+    }
+
+    public function statusOrderSuccess()
+    {
+        if(isset($_POST['status_succes']))
+        {
+            $orderId = $_POST['order_id'];
+            $result = $this->order->updateStatusOrderSuccess($orderId);
+            $orderListConfirm = $this->order->listConfirmOrder();
+
+            require "views/admin/tinhTrangDH/index.php";
+        }
+
+        if(isset($_POST['status_dis'])) 
+        {
+            $orderId = $_POST['order_id'];
+            $result = $this->order->updateStatusOrderDis($orderId);
+            $orderListConfirm = $this->order->listConfirmOrder();
+
+            require "views/admin/tinhTrangDH/index.php";
+
+
+        }
+    }
+
 }

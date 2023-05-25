@@ -33,7 +33,6 @@
                         <table width="100%">
                             <thead>
                                 <tr>
-                                    <th>STT</th>
                                     <th>Mã đơn hàng</th>
                                     <th>Tên và địa chỉ khách</th>
                                     <th>Ngày đặt</th>
@@ -44,66 +43,47 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>#5033</td>
-                                    <td>
-                                        #42312
-                                    </td>
-                                    <td style="max-width: 400px; padding:0px 12px">
-                                        <h3>Dương Văn Thắng</h3>
-                                        <span>Lương ĐiềnLương Xá - Lương ĐiềnLương Xá - Lương ĐiềnLương Xá - Lương Điền</span>
-                                    </td>
-                                    <td>
-                                        19 April, 2022
-                                    </td>
-                                    <td>
-                                        <i class="ti-check"></i>
-                                    </td>
-                                    <td>
-                                        <i class="ti-check"></i>
-                                    </td>
-                                    <td>
-                                        <i class="ti-check"></i>
-                                    </td>
-                                    <td>
-                                        <div class="btn__status_product">
-                                            <button class="btn__status_succes none">Hoàn Thành</button>
-                                            <button class="btn__status_dis none">Hủy Đơn</button>
-                                            <p class="btn__statuc_succes-text none">Đã hoàn thành</p>
-                                            <p class="btn__statuc_dis-text show">Đã hủy đơn hàng</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#5033</td>
-                                    <td>
-                                        #42312
-                                    </td>
-                                    <td style="max-width: 400px; padding:0px 12px">
-                                        <h3>Dương Văn Thắng</h3>
-                                        <span>Lương ĐiềnLương Xá - Lương ĐiềnLương Xá - Lương ĐiềnLương Xá - Lương Điền</span>
-                                    </td>
-                                    <td>
-                                        19 April, 2022
-                                    </td>
-                                    <td>
-                                        <i class="ti-check"></i>
-                                    </td>
-                                    <td>
-                                        <i class="ti-check"></i>
-                                    </td>
-                                    <td>
-                                        <i class="ti-check"></i>
-                                    </td>
-                                    <td>
-                                        <div class="btn__status_product">
-                                            <button class="btn__status_succes">Hoàn Thành</button>
-                                            <button class="btn__status_dis ">Hủy Đơn</button>
-                                            <p class="btn__statuc_succes-text none">Đã hoàn thành</p>
-                                            <p class="btn__statuc_dis-text none">Đã hủy đơn hàng</p>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <?php foreach($orderListConfirm as $iteam) { ?>
+                                    <form action="index.php?controller=order&action=statusOrderSuccess&module=admin" method="POST">
+                                        <tr>
+                                            <td>
+                                                <?php echo $iteam['id'] ?>
+                                            </td>
+                                            <td style="max-width: 400px; padding:0px 12px">
+                                                <h3><?php echo $iteam['fullname'] ?></h3>
+                                                <span><?php echo $iteam['address'] ?> - <?php echo $iteam['city'] ?></span>
+                                            </td>
+                                            <td>
+                                                <?php echo date("Y-m-d", strtotime($iteam['oder_date']));  ?>
+                                            </td>
+                                            <td>
+                                                <i class="ti-check"></i>
+                                            </td>
+                                            <td>
+                                                <i class="ti-check"></i>
+                                            </td>
+                                            <td>
+                                                <!-- <i class="ti-check"></i> -->
+                                            </td>
+                                            <td>
+                                                <div class="btn__status_product">
+                                                    <?php if($iteam['status'] == 'chờ xác nhận') {?>
+                                                        <input type="hidden" name="order_id" value="<?php echo $iteam['id'] ?>"/>
+                                                        <button type="submit" name="status_succes" id="btn__status_succes" class="btn__status_succes">Hoàn Thành</button>
+                                                        <button type="submit" name="status_dis" class="btn__status_dis">Hủy Đơn</button>
+    
+                                                    <?php }else if($iteam['status'] == 'đã xác nhận') {?>
+    
+                                                        <p class="btn__statuc_succes-text show">Đơn hàng thành công</p>
+    
+                                                    <?php }else if($iteam['status'] == 'đã hủy đơn') {?>
+                                                        <p class="btn__statuc_dis-text show">Đã hủy đơn hàng</p>
+                                                     <?php }?>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -117,9 +97,10 @@
     </div>
 
     <script>
-        $id = document.getElementById("bntAdd").addEventListener("click", function() {
-            window.location.href = "index.php?controller=themSanPham&action=index&module=admin";
-        })
+        
+        // $succesTatus = document.getElementById("btn__status_succes").addEventListener("click", function() {
+        //     window.location.href = "index.php?controller=oder&action=stausOrderSuccess&module=admin";
+        // })
     </script>
 </body>
 </html>

@@ -50,8 +50,10 @@ class User extends Model
     }
 
     public function coutUser() {
-        $sql = "SELECT COUNT(*) FROM users";
+        $sql = "SELECT * FROM users";
         $result = $this->dbConnection->query($sql);
         return mysqli_num_rows($result);
     }
+
+    
 }

@@ -32,27 +32,75 @@ class Order extends Model
 
     public function getAllOrders()
     {
-        $sql = "SELECT * FROM oders ";
-        // $sql = "SELECT oders.id as id, fullname, email, phoneNumber, city, address, pay, oders.total_money ,
-        // oder_details.id as oder_details_id, product.name
-        // FROM oders inner join oder_details on oders.id = oder_details.oder_id INNER join product on oder_details.product_id = product.id
-        // WHERE oder_id = 25";
+        $sql = "SELECT * FROM oders WHERE status IS NULL";
 
         $result = $this->dbConnection->query($sql);
         // print_r($result->fetch_all(MYSQLI_ASSOC));die();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // public function getAllOrders()
-    // {
-    //     // $sql = "SELECT * FROM oders ";
-    //     $sql = "SELECT oders.id as id, fullname, email, phoneNumber, city, address, pay, oders.total_money ,
-    //     oder_details.id as oder_details_id, product.name
-    //     FROM oders inner join oder_details on oders.id = oder_details.oder_id INNER join product on oder_details.product_id = product.id";
+    public function updateStatusOrder($orderId)
+    {
+        $sql = "UPDATE oders SET status = 'chờ xác nhận' WHERE id = $orderId";
 
-    //     $result = $this->dbConnection->query($sql);
-    //     // print_r($result->fetch_all(MYSQLI_ASSOC));die();
-    //     return $result->fetch_all(MYSQLI_ASSOC);
-    // }
+        $result = $this->dbConnection->query($sql); 
+
+        return $result;
+    }
+
+    public function listConfirmOrder()
+    {
+        // if($confirmOrder == 1) {
+            $sql = "SELECT * FROM oders WHERE status IS NOT NULL";
+
+            $result = $this->dbConnection->query($sql);
+            // print_r($result->fetch_all(MYSQLI_ASSOC));die();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        // }
+    }
+
+    public function updateStatusOrderSuccess($orderId)
+    {
+        $sql = "UPDATE oders SET status = 'đã xác nhận' WHERE id = $orderId";
+
+        $result = $this->dbConnection->query($sql); 
+
+        return $result;
+    }
+
+    public function updateStatusOrderDis($orderId)
+    {
+        $sql = "UPDATE oders SET status = 'đã hủy đơn' WHERE id = $orderId";
+
+        $result = $this->dbConnection->query($sql); 
+
+        return $result;
+    }
     
+    public function countSuccessOrder()
+    {
+        $sql = "SELECT id FROM oders WHERE status ='đã xác nhận'";
+        $result = $this->dbConnection->query($sql);
+        // print_r($result->fetch_assoc());die();
+        return mysqli_num_rows($result);
+    }
+
+    public function getTotalForMonth()
+    {
+        $sql = "SELECT MONTH(oder_date) AS date, SUM(total_money) AS total FROM oders
+                WHERE MONTH(oder_date) = MONTH(NOW()) AND status = 'đã xác nhận'
+                GROUP BY MONTH(oder_date)";
+
+        // $sql = "SELECT MONTH(6) AS date, SUM(total_money) AS total FROM oders
+        //         WHERE MONTH(6) = MONTH(NOW()) AND status = 'đã xác nhận'
+        //         GROUP BY MONTH(6)";
+        $result = $this->dbConnection->query($sql);
+        // print_r($result->fetch_assoc());die();
+        // if($result->fetch_assoc() == null)
+        // {
+        //     return ['date' => date('n'), 'total' => 'chưa có đơn mới trong tháng'];
+        // } 
+
+        return $result->fetch_assoc();
+    }
 }

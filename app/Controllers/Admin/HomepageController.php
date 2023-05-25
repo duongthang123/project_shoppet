@@ -21,6 +21,9 @@ class HomepageController
             header("location: index.php?controller=authentication&action=showloginAdmin&module=web");
         } else {
             $countUsers = $this->user->coutUser();
+            $countSuccessOrders =$this->order->countSuccessOrder();
+            $totalMoneyForMonth = $this->order->getTotalForMonth();
+            // print_r($totalMoneyForMonth);die();
             require "views/admin/homepage/index.php";
         }
     }

@@ -24,7 +24,6 @@ class OrderDetail extends Model
         
         $result = $this->dbConnection->query($sql);
 
-        // print_r($result->fetch_all(MYSQLI_ASSOC));die();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 }

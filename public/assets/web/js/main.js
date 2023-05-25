@@ -53,10 +53,9 @@ menuParent.addEventListener("click", function(){
 // active menu
 
 // const menus = document.querySelectorAll(".header__nav-item .header__nav-link");
-// console.log("1");
 
 // for(let i = 0; i< menus.length; i++) {
-//     menus[i].addEventListener("mousedown", function(e) {
+//     menus[i].addEventListener("click", function(e) {
 //         e.preventDefault();
 //         menus.forEach((other) => {
 //             other.classList.remove("header__nav-link--active");

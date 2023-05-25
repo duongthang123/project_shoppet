@@ -42,7 +42,7 @@
 
                     <div class="card">
                         <div class="card-head">
-                            <h2>340,230</h2>
+                            <h2><?php echo $countSuccessOrders ?></h2>
                             <span class="las la-eye"></span>
                         </div>
                         <div class="card-progress">
@@ -55,11 +55,11 @@
 
                     <div class="card">
                         <div class="card-head">
-                            <h2>$653,200</h2>
+                            <h2><?php echo number_format($totalMoneyForMonth['total']) ?></h2>
                             <span class="las la-shopping-cart"></span>
                         </div>
                         <div class="card-progress">
-                            <small>Tổng doanh thu</small>
+                            <small>Tổng doanh thu tháng <?php echo $totalMoneyForMonth['date'] ?></small>
                             <div class="card-indicator">
                                 <div class="indicator three" style="width: 65%"></div>
                             </div>
