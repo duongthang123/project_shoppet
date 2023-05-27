@@ -26,7 +26,7 @@ class AuthenticationController
 
     public function showlogin()
     {
-        $id = $_GET['category_id'];
+        // $id = $_GET['category_id'];
         $categories = $this->category->all();
         require "views/web/authentication/login.php";
     }
@@ -59,7 +59,6 @@ class AuthenticationController
 
     public function showregister()
     {
-        $id = $_GET['category_id'];
         $categories = $this->category->all();
         require "views/web/authentication/resgister.php";
     }
@@ -91,9 +90,9 @@ class AuthenticationController
 
     public function logout()
     {
-        session_start();
-        session_unset();
-        session_destroy();
+        // session_start();
+        // session_unset();
+        // session_destroy();
         unset($_SESSION['user']);
         header("location: index.php?controller=authentication&action=showlogin&module=web");
     }
@@ -102,7 +101,6 @@ class AuthenticationController
 
     public function showloginAdmin()
     {
-        $id = $_GET['category_id'];
         $categories = $this->category->all();
         require "views/web/authentication/loginAdmin.php";
     }
@@ -136,7 +134,6 @@ class AuthenticationController
 
     public function showregisterAdmin()
     {
-        $id = $_GET['category_id'];
         $categories = $this->category->all();
         require "views/web/authentication/registeradmin.php";
     }
@@ -167,9 +164,9 @@ class AuthenticationController
 
     public function logoutAdmin()
     {
-        session_start();
-        session_unset();
-        session_destroy();
+        // session_start();
+        // session_unset();
+        // session_destroy();
         unset($_SESSION['admin']);
         header("location: index.php?controller=authentication&action=showloginAdmin&module=web");
     }

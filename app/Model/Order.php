@@ -35,7 +35,7 @@ class Order extends Model
         $sql = "SELECT * FROM oders WHERE status IS NULL";
 
         $result = $this->dbConnection->query($sql);
-        // print_r($result->fetch_all(MYSQLI_ASSOC));die();
+        
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -91,15 +91,7 @@ class Order extends Model
                 WHERE MONTH(oder_date) = MONTH(NOW()) AND status = 'đã xác nhận'
                 GROUP BY MONTH(oder_date)";
 
-        // $sql = "SELECT MONTH(6) AS date, SUM(total_money) AS total FROM oders
-        //         WHERE MONTH(6) = MONTH(NOW()) AND status = 'đã xác nhận'
-        //         GROUP BY MONTH(6)";
         $result = $this->dbConnection->query($sql);
-        // print_r($result->fetch_assoc());die();
-        // if($result->fetch_assoc() == null)
-        // {
-        //     return ['date' => date('n'), 'total' => 'chưa có đơn mới trong tháng'];
-        // } 
 
         return $result->fetch_assoc();
     }
